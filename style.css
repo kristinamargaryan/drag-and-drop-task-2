@@ -1,0 +1,77 @@
+
+.squares_div{
+    display: flex;
+}
+ 
+.tags_div{
+    display: flex;
+    flex-direction: column
+}
+.square_div{
+    width: 500px;
+    height: 500px;
+    border: 3px solid black;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+}
+.all_tags{
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
+.tags{
+    cursor: pointer;
+}
+.button{
+    cursor: pointer;
+}
+.input_text{
+    display: none;
+}
+
+.square_div input{
+    min-width: 95%;
+    height: 40px; 
+    
+}
+.square_div div {
+    min-width: 95%;
+    border: 1px solid black;
+    margin: 10px auto;
+    padding: 5px; 
+}
+.square_div p {
+    border: 3px solid black;
+    min-width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.square_div h1 { 
+  min-width: 95%;
+  min-height: auto;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.square_div .created_span {
+    height: 40%;
+    min-width: 95%;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+.square_div span {
+    width: 10px;
+    height: 10px; 
+    margin: 1px; 
+    padding: 1px auto;
+    display: flex;
+    flex-direction: column;
+}
+.input_span{
+    padding:10px 0;
+}

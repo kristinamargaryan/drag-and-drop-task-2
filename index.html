@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="squares_div">
+            <div class="div_constructor square_div "></div>
+            <div class="div_result square_div" ondrop = "drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="tags_div">
+                <select name="tags" id="tags" class="tags all_tags" onchange="inputValidation(this)">
+                    <option value disabled selected>Select Teg</option>
+                    <option value="div">div</option>
+                    <option value="h1">h1</option>
+                    <option value="input">input</option>
+                    <option value="p">p</option>
+                    <option value="span">span</option>
+                </select>
+                <input type="text" class="input_text all_tags" >
+                <button id="click" class="button all_tags" onclick="create_tag()" >CREATE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
