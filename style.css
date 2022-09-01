@@ -1,4 +1,3 @@
-
 .squares_div{
     display: flex;
 }
@@ -36,13 +35,14 @@
 .square_div input{
     min-width: 95%;
     height: 40px; 
-    
+    user-select: none;
 }
 .square_div div {
     min-width: 95%;
     border: 1px solid black;
     margin: 10px auto;
     padding: 5px; 
+    user-select: none;
 }
 .square_div p {
     border: 3px solid black;
@@ -50,6 +50,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 .square_div h1 { 
   min-width: 95%;
@@ -57,12 +58,14 @@
   font-size: 16px;
   display: flex;
   flex-direction: column;
+  user-select: none;
 }
 .square_div .created_span {
     height: 40%;
     min-width: 95%;
     border: 1px solid black;
     margin-top: 5px;
+    user-select: none;
 }
 .square_div span {
     width: 10px;
@@ -71,7 +74,9 @@
     padding: 1px auto;
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 .input_span{
     padding:10px 0;
+    user-select: none;
 }
