@@ -57,9 +57,9 @@ function drop(event) {
   if (noAllowtTegs.includes(event.target.tagName.toLowerCase())) {
     alert(`${tagValue} can not be appended to ${event.target.tagName} element `);
   } else {
-    event.target.appendChild(document.getElementById(data));
-    document.getElementById(data).removeEventListener("dragstart", drag);
     document.getElementById(data).setAttribute("draggable", false);
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById(data).removeEventListener("dragstart", drag); 
   }
   };
 
