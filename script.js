@@ -1,15 +1,16 @@
 let count = 0; 
 let noAllowtTegs = ["input", "h1", "p"];
-let divConstructor = document.getElementsByClassName("div_constructor")[0];
+let divConstructor = document.querySelector(".div_constructor");
 let divResult = document.querySelector(".div_result");
 let inputText = document.querySelector(".input_text");
 let tagValue ;
+
 function inputValidation(selectObject) {
     tagValue  = selectObject.value; 
     if(tagValue === "div" || tagValue === "input"){
-        document.getElementsByClassName("input_text")[0].style.display = "none";
+      inputText.style.display = "none";
     }else{
-        document.getElementsByClassName("input_text")[0].style.display = "block";
+      inputText.style.display = "block";
     }
   };
 
@@ -17,20 +18,18 @@ function create_tag(){
   if(tagValue == undefined){ 
     return
   }
-  let input_value =  document.getElementsByClassName("input_text")[0].value;
+  let input_value =  inputText.value;
   let elem = document.createElement(tagValue);  
   console.log(elem);
   elem.innerText = input_value ;
   divConstructor.appendChild(elem) ;
-  document.getElementsByClassName("input_text")[0].value = ""; 
+  inputText.value = ""; 
   elem.addEventListener("mouseover", hover);
   elem.addEventListener("mouseout", hoverOut);
   elem.id = tagValue + count;
   elem.className = `created_${tagValue}`;
   elem.setAttribute("draggable", true); 
-  elem.addEventListener("dragstart", drag);  
-
-    
+  elem.addEventListener("dragstart", drag);
   if (tagValue == "input") {
       elem.setAttribute("placeholder", "input");
       elem.setAttribute("readonly", "true");  
@@ -54,19 +53,20 @@ function drag(event){
 
 function drop(event) {    
   event.preventDefault();
-  let data = event.dataTransfer.getData("Text");
+  let data = event.dataTransfer.getData("Text"); 
   if (noAllowtTegs.includes(event.target.tagName.toLowerCase())) {
-    alert(`${tagValue} can not be appended to element `);
+    alert(`${tagValue} can not be appended to ${event.target.tagName} element `);
   } else {
     event.target.appendChild(document.getElementById(data));
-    document.getElementById(data).setAttribute("draggable", false);
     document.getElementById(data).removeEventListener("dragstart", drag);
+    document.getElementById(data).setAttribute("draggable", false);
   }
   };
 
 function hover(ev) {
     ev.target.style.borderColor = "red";
 };
+
 function hoverOut(ev) {
     ev.target.style.borderColor = "black";
 };
